@@ -17,11 +17,11 @@ exports.addProducts = async(req,res)=>{
 
 exports.getAbout = async(req,res) => {
     const data = await Product.find()
-    const trend = data.slice(3,8)
+    const trend = data.slice(3,7)
     const adidas = data.slice(65,70)
     const puma = data.slice(98,103)
     // console.log(data)
-    const final = {trend,adidas,puma}
+    const final = {trend}
     res.json({data:final})
 }
 exports.getProducts = async(req,res)=>{

@@ -21,3 +21,17 @@ exports.addUser = async(req,res)=>{
     })
     res.json({data:"Registered SucessFully"})
 }
+exports.addToWhisList = async(req,res)=>{
+    const {email,wishlist} = req.body;
+    console.log(email,wishlist)
+    await User.findOneAndUpdate({email:email},{wishList:wishlist})
+    res.json({
+        data:wishlist
+    })
+}
+exports.removeFromWhisList = async(req,res)=>{
+    const data = req.body;
+    res.json({
+        data:whislist
+    })
+}
